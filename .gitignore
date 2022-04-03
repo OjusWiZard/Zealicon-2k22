@@ -4,3 +4,5 @@
 *.tmp
 venv
 .env
+static
+database/db.sqlite3
