@@ -22,6 +22,7 @@ FRONTEND_HOST = "zealicon.in"
 
 
 # Razorpay Payment Settings
+
 FEE_AMOUNT = 100
 KEY_ID = ""
 KEY_SECRET = ""
