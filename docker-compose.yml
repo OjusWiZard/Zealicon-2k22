@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  backend:
+    restart: always
+    build: .
+    env_file: .env
+    ports:
+      - 8000:8000
+    volumes:
+      - type: volume
+        source: database
+        target: /zealicon/database/
+    command: >
+      bash -c "python3 manage.py migrate
+      && python3 manage.py collectstatic --noinput
+      && /usr/local/bin/gunicorn Zealicon.wsgi:application -b :8000"
+
+volumes:
+  database:
